@@ -52,6 +52,37 @@ class LinkedList :
         temp.next=a
         
         
+    def delete(self):
+        #delete a node from the start
+        #time complexity is O(1)
+        self.head=self.head.next
+    
+    def delete_end(self) :
+        #delete a node from the end
+        #time complexity is O(n)
+        temp=self.head
+        if(self.head is None) :
+           return
+        if(self.head.next is None ):
+           self.head=None
+           return 
+        if(self.head.next.next is None):
+           self.head.next=null
+           return 
+       
+        while(temp.next.next is not None) :
+          temp=temp.next
+        temp.next=None
+        
+    def delete_val(self,value):
+        
+        if(self.head.data==value):
+            self.head=self.head.next
+        temp=self.head
+        while(temp.next.data is not value):
+            temp=temp.next
+        temp.next=temp.next.next    
+        
 
 if __name__ == '__main__'  :
     
@@ -60,6 +91,7 @@ if __name__ == '__main__'  :
     l1.insert(10)
     l1.insert_after(10,20)
     l1.insert_end(40)
+    l1.delete_val(30)
     l1.print()
 
    
