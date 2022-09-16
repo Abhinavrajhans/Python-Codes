@@ -16,11 +16,11 @@ class LinkedList :
         
     def print(self) :
         
-       temp=self.head
-       
-       while(temp!=None):
+        temp=self.head
+        while(temp!=None):
           print(temp.data)
-          temp=temp.next 
+          temp=temp.next
+          
           
     def insert(self,data):
         #insert at the front 
@@ -48,20 +48,25 @@ class LinkedList :
     def insert_end(self,data): 
         #time complexity is O(1)
         
-        a=Node(data)
-        self.tail.next=a
-        self.tail=a
+        if self.head==None :
+            self.head=Node(data)
+            self.tail=self.head
+        
+        else :    
+            a=Node(data)
+            self.tail.next=a
+            self.tail=a
         
 
 if __name__ == '__main__'  :
     
     l1 = LinkedList()
-    l1.insert(30)
-    l1.insert(10)
-    l1.insert_after(10,20)
-    l1.insert_end(40)
-    l1.insert_end(50)
+    l1.insert_end(10)
+    l1.insert_end(20)
+    l1.insert_end(30)
     l1.print()
+    
+
 
    
     
