@@ -56,7 +56,19 @@ class LinkedList :
             a=Node(data)
             self.tail.next=a
             self.tail=a
+    
+    def reverse(self):
+        prev=None
+        curr=self.head
+        nnext=None
+        while(curr!=None):
+            nnext=curr.next
+            curr.next=prev
+            prev=curr
+            curr=nnext
         
+        self.head=prev    
+            
 
 if __name__ == '__main__'  :
     
@@ -65,7 +77,8 @@ if __name__ == '__main__'  :
     l1.insert_end(20)
     l1.insert_end(30)
     l1.print()
-    
+    l1.reverse()
+    l1.print()
 
 
    
