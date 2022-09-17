@@ -67,6 +67,8 @@ class LinkedList :
             prev=curr
             curr=nnext
         
+        return prev    
+        
             
 
 if __name__ == '__main__'  :
@@ -76,8 +78,8 @@ if __name__ == '__main__'  :
     l1.insert_end(20)
     l1.insert_end(30)
     t2=l1.head.next
-    l1.reverse(t2)
-    l1.head.next=t2
+    l1.head.next=l1.reverse(t2)
+    
     
     l1.print()
 
